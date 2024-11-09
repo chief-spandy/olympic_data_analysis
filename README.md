@@ -1,7 +1,8 @@
 # Olympic Games Analysis
-In this project I collected data about olympic games and transformed it in SQL Server and Power BI to visualize data that show how countries have performed historically in the summer Olympic Games.
+In this project, I gathered and transformed Olympic Games data in SQL Server and Power BI to create a visualization of countries' historical performances in the Summer Olympic Games. 
 
-The main goal is to show historical performance for different countries, with the possibility to select your own country, favorite sport or competitor.
+The dashboard enables users to explore performance by selecting specific countries, sports, or competitors.
+
 
 ![OlympicGames](https://user-images.githubusercontent.com/61323876/135508380-0844179b-07b7-449f-ab7f-9a801c93591a.jpg)
 
@@ -43,13 +44,6 @@ SELECT
   WHERE RIGHT(Games,CHARINDEX(' ', REVERSE(Games))-1) = 'Summer' -- Where Clause to isolate Summer Season
 ```
 
-## Data Model
-As this is a view where dimensions and facts have been combined, the data model that is created in Power BI is one table. The query from previous step was loaded in directly.
-
-Afterwards I created a new table to isolate the calculations created in Power BI that I will explain in the next section. 
-
-<img width="384" alt="Data Model" src="https://user-images.githubusercontent.com/61323876/135506538-b1aa9a41-0bc3-4023-b060-1b3aca4ea000.png">
-
 ## Calculations
 The following calculations were created in the Power BI reports using DAX (Data Analysis Expressions):
 ```
@@ -66,13 +60,6 @@ CALCULATE (
     )
 )
 ```
-
-## Dashboards
-The finished dashboard consists of visualizations and filters that give an easy option for the end users to navigate the summer games through history. Some possibilities are to filter by period using year, nation code to focus on one country or search for either a competitor or specific sports over time.
-
-All the dashboards are interactive with each other so if you click on a specific sport, competitor, country or gender in their respective dashboards all the others adjust to focus on that information.
-
-__Click [here](https://app.powerbi.com/view?r=eyJrIjoiMTUzZTZjYTMtMjNjMi00NzQyLWI5ZjgtNTQxMzQ3NjM0YTA0IiwidCI6IjBiZmE4NTAwLWIxZjItNDU2Ni1iYWYxLTZmNTkzNzA4OTNlNyIsImMiOjh9&pageName=ReportSection) to open the dashboard and try it out!__
 
 <img width="672" alt="Olympic Games Analysis" src="https://user-images.githubusercontent.com/61323876/135506469-d1b07b50-8660-480e-ac9f-810cfa01f8b9.png">
 
